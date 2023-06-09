@@ -151,8 +151,22 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
+              title="WithdrawalRequest"
+              to="/withdrawalRequest"
+              icon={<ReceiptOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="Purchase History"
               to="/history"
+              icon={<ReceiptOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Withdrwal History"
+              to="/whistory"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
