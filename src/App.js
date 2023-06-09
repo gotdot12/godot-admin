@@ -10,6 +10,8 @@ import Form from "./scenes/form";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import PurchaseHistory from "./scenes/purchaseHistory";
+import WithdrawalHistory from "./scenes/withdrawalRequestHistory";
+import WithdrawalPage from "./scenes/withdrawalPage";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -28,7 +30,9 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
+              <Route path="/withdrawalRequest" element={<WithdrawalPage />} />
               <Route path="/history" element={<PurchaseHistory />} />
+              <Route path="/whistory" element={<WithdrawalHistory />} />
               <Route path="/form" element={<Form />} />
             </Routes>
           </main>
