@@ -16,7 +16,7 @@ const WithdrawalPage = () => {
     }, []);
 
     const getUsers = async () => {
-        const getUser = await fetch("http://localhost:8002/getWithdrawalList", {
+        const getUser = await fetch("https://godot-main-server.vercel.app/getWithdrawalList", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -38,7 +38,7 @@ const WithdrawalPage = () => {
             const wallet = elem.wallet;
             const amount = elem.amount;
 
-            const getUserH = await fetch("http://localhost:8002/approveWithdrawalRequest", {
+            const getUserH = await fetch("https://godot-main-server.vercel.app/approveWithdrawalRequest", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -62,7 +62,7 @@ const WithdrawalPage = () => {
         if (respp) {
             const email = elem.email;
 
-            const getUserD = await fetch("http://localhost:8002/wdecline", {
+            const getUserD = await fetch("https://godot-main-server.vercel.app/wdecline", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -134,7 +134,7 @@ const WithdrawalPage = () => {
                                     <div class="col col-3" data-label="Job Id">{elem.name}</div>
                                     <div class="col col-3" data-label="Job Id">{elem.email}</div>
                                     <div class="col col-1" data-label="Customer Name">{elem.plan}</div>
-                                    <div class="col col-2" data-label="Amount" style={{cursor: "pointer"}} onClick={() => { navigator.clipboard.writeText(elem.wallet) }}>{elem.wallet}</div>
+                                    <div class="col col-2" data-label="Amount" style={{ cursor: "pointer" }} onClick={() => { navigator.clipboard.writeText(elem.wallet) }}>{elem.wallet}</div>
                                     <div class="col col-1" data-label="Amount">{elem.amount / 0.000004}</div>
                                     <div class="col col-4" data-label="Payment Status"><span style={{ paddingRight: "2rem", cursor: "pointer" }} onClick={() => { handleSubmit(elem) }} >✅</span> <span style={{ cursor: "pointer" }} onClick={() => { handleDelete(elem) }} >❌</span></div>
                                 </li>
