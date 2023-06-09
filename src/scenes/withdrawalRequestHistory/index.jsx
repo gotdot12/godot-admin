@@ -15,7 +15,7 @@ const WithdrawalHistory = () => {
   }, []);
 
   const getUsers = async () => {
-    const getUser = await fetch("http://localhost:8002/getAllWithdrawals", {
+    const getUser = await fetch("https://godot-main-server.vercel.app/getAllWithdrawals", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
